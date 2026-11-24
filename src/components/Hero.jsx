@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ChevronDown, Play, Sparkles } from "lucide-react";
+import { ChevronDown, Play, Sparkles, Layers } from "lucide-react";
 import { PERSONAL_INFO } from "../data/projects";
+import HeroDisassembly from "./HeroDisassembly";
 
 export default function Hero({ onOpenReel }) {
   const containerRef = useRef(null);
@@ -134,53 +135,60 @@ export default function Hero({ onOpenReel }) {
             </div>
           </motion.div>
 
-          {/* Main Tagline: IDEAS INTO EXPERIENCES. */}
+          {/* Main Tagline & 3D Disassembly Rig Grid */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mt-4 pt-4"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mt-6 pt-4"
           >
-            <div>
-              <p className="font-serif italic font-normal text-white/90 text-[clamp(1.75rem,4.2vw,4rem)] leading-[1.05] tracking-tight">
-                {PERSONAL_INFO.tagline}
-              </p>
-              
-              {/* Supporting Text: FULL STACK × AI × ROBOTICS × VISUAL STORYTELLING */}
-              <div className="mt-5 flex items-center gap-2 flex-wrap">
-                <span className="inline-block px-2.5 py-1 text-[11px] font-mono tracking-widest bg-white/10 text-white/90 border border-white/15 rounded-xs">
-                  {PERSONAL_INFO.supportingText}
-                </span>
+            <div className="lg:col-span-7 flex flex-col justify-between">
+              <div>
+                <p className="font-serif italic font-normal text-white/90 text-[clamp(1.75rem,4.2vw,4rem)] leading-[1.05] tracking-tight">
+                  {PERSONAL_INFO.tagline}
+                </p>
+                
+                {/* Supporting Text: FULL STACK × AI × ROBOTICS × VISUAL STORYTELLING */}
+                <div className="mt-5 flex items-center gap-2 flex-wrap">
+                  <span className="inline-block px-2.5 py-1 text-[11px] font-mono tracking-widest bg-white/10 text-white/90 border border-white/15 rounded-xs">
+                    {PERSONAL_INFO.supportingText}
+                  </span>
+                </div>
+              </div>
+
+              {/* Reel Quick-Play Action */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8">
+                <button
+                  type="button"
+                  onClick={() => onOpenReel({
+                    title: "Sriman B. — Cinematic Showreel",
+                    category: "SHOWREEL",
+                    videoSrc: PERSONAL_INFO.heroVideo,
+                    thumbnail: PERSONAL_INFO.heroPoster,
+                    specs: "4K UHD · 24fps · Color Grading & Systems",
+                    role: "Creative Technologist / Filmmaker"
+                  })}
+                  data-cursor-hover="true"
+                  className="group flex items-center gap-4 px-5 py-3 rounded-xs border border-white/20 bg-white/5 hover:bg-[#A33A32] hover:border-[#A33A32] transition-all duration-300"
+                >
+                  <div className="w-8 h-8 rounded-full bg-white text-[#121212] flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play size={14} className="ml-0.5 fill-current" />
+                  </div>
+                  <div className="text-left font-mono">
+                    <div className="text-xs uppercase font-semibold text-white tracking-wider">
+                      Watch Showreel
+                    </div>
+                    <div className="text-[10px] text-white/50 group-hover:text-white/80">
+                      Replaceable in /public/videos/
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
 
-            {/* Reel Quick-Play Action */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <button
-                type="button"
-                onClick={() => onOpenReel({
-                  title: "Sriman B. — Cinematic Showreel",
-                  category: "SHOWREEL",
-                  videoSrc: PERSONAL_INFO.heroVideo,
-                  thumbnail: PERSONAL_INFO.heroPoster,
-                  specs: "4K UHD · 24fps · Color Grading & Systems",
-                  role: "Creative Technologist / Filmmaker"
-                })}
-                data-cursor-hover="true"
-                className="group flex items-center gap-4 px-5 py-3 rounded-xs border border-white/20 bg-white/5 hover:bg-[#A33A32] hover:border-[#A33A32] transition-all duration-300"
-              >
-                <div className="w-8 h-8 rounded-full bg-white text-[#121212] flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play size={14} className="ml-0.5 fill-current" />
-                </div>
-                <div className="text-left font-mono">
-                  <div className="text-xs uppercase font-semibold text-white tracking-wider">
-                    Watch Showreel
-                  </div>
-                  <div className="text-[10px] text-white/50 group-hover:text-white/80">
-                    Replaceable in /public/videos/
-                  </div>
-                </div>
-              </button>
+            {/* Stage 2 / 3D Disassembly Rig in Hero */}
+            <div className="lg:col-span-5 hidden sm:block">
+              <HeroDisassembly scrollProgress={scrollYProgress} />
             </div>
           </motion.div>
         </div>

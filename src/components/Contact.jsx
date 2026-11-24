@@ -1,15 +1,54 @@
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
-import { ArrowUp, Mail, Copy, Check, ArrowUpRight, Send } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { ArrowUp, Mail, Copy, Check, ArrowUpRight, Send, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon, InstagramIcon } from "./SocialIcons";
 import { PERSONAL_INFO } from "../data/projects";
 
+// Register GSAP plugins
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
+
 export default function Contact() {
   const sectionRef = useRef(null);
+  const headingRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
   const [copied, setCopied] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  // Stage 7: Large Typography Kinetic Reveal on Scroll
+  useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const titleLines = headingRef.current?.querySelectorAll(".kinetic-line");
+    if (titleLines && titleLines.length > 0) {
+      gsap.fromTo(
+        titleLines,
+        {
+          y: "100%",
+          opacity: 0,
+          rotateX: -25
+        },
+        {
+          y: "0%",
+          opacity: 1,
+          rotateX: 0,
+          stagger: 0.15,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+  }, { scope: sectionRef });
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -25,7 +64,6 @@ export default function Contact() {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     setFormSubmitted(true);
-    // Open user's default email client pre-filled
     const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
     const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
     window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
@@ -41,28 +79,26 @@ export default function Contact() {
         {/* Section Kicker */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-16">
           <div className="editorial-kicker text-[#A33A32]">
-            04 // CONNECT & COLLABORATE
+            STAGE 07 // FINAL REVEAL & TRANSMISSION
           </div>
           <div className="font-mono text-xs text-white/50 uppercase tracking-wider">
             Initiate Contact
           </div>
         </div>
 
-        {/* Big Editorial Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16 sm:mb-24"
-        >
-          <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.75rem,8vw,7.5rem)] leading-[0.9] text-white">
-            HAVE AN IDEA?
-            <br />
-            <span className="font-serif italic font-normal text-[#A33A32]">
+        {/* Big Editorial Headline with Kinetic Masking */}
+        <div ref={headingRef} className="mb-16 sm:mb-24 overflow-hidden perspective-[1000px]">
+          <div className="overflow-hidden">
+            <h2 className="kinetic-line font-sans font-black tracking-tight uppercase text-[clamp(2.75rem,8vw,7.5rem)] leading-[0.9] text-white">
+              HAVE AN IDEA?
+            </h2>
+          </div>
+          <div className="overflow-hidden mt-1">
+            <h2 className="kinetic-line font-serif italic font-normal text-[clamp(2.75rem,8vw,7.5rem)] leading-[0.9] text-[#A33A32]">
               LET'S CREATE IT.
-            </span>
-          </h2>
-        </motion.div>
+            </h2>
+          </div>
+        </div>
 
         {/* Contact Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -74,7 +110,7 @@ export default function Contact() {
               </p>
 
               {/* Email Direct Action Box */}
-              <div className="p-6 bg-[#202020] border border-white/10 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="p-6 bg-[#202020] border border-white/10 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 rounded-xs bg-[#A33A32]/20 text-[#A33A32]">
                     <Mail size={20} />
@@ -166,7 +202,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Direct Message Box */}
-          <div className="lg:col-span-6 bg-[#202020] p-6 sm:p-8 rounded-xs border border-white/10">
+          <div className="lg:col-span-6 bg-[#202020] p-6 sm:p-8 rounded-xs border border-white/10 shadow-2xl">
             <h3 className="font-sans font-bold text-xl text-white mb-2">
               Send a Transmission
             </h3>

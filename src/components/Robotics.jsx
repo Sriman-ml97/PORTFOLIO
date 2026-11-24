@@ -1,12 +1,14 @@
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
-import { Bot, Cpu, Navigation, Eye, Activity, ShieldCheck, ChevronRight, Terminal } from "lucide-react";
+import { Bot, Cpu, Navigation, Eye, Activity, ShieldCheck, ChevronRight, Terminal, Layers } from "lucide-react";
 import { ROBOTICS_PROJECT } from "../data/projects";
+import RoboticsExplodedView from "./RoboticsExplodedView";
 
 export default function Robotics() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
   const [activeTab, setActiveTab] = useState("objectives");
+  const [viewMode, setViewMode] = useState("exploded"); // "exploded" or "image"
 
   return (
     <section
@@ -22,69 +24,104 @@ export default function Robotics() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8 mb-16">
           <div>
             <div className="editorial-kicker text-[#A33A32] mb-3">
-              {ROBOTICS_PROJECT.kicker}
+              STAGE 05 // INNOVATION & TECHNICAL DISASSEMBLY
             </div>
             <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-white">
               AUTONOMOUS SYSTEMS.
             </h2>
           </div>
 
-          <p className="font-mono text-xs sm:text-sm text-white/60 max-w-md">
-            Engineering physical intelligence. Integrating ROS 2, computer vision, and behavior tree autonomy into service robotics.
-          </p>
+          <div className="max-w-md">
+            <p className="font-mono text-xs sm:text-sm text-white/60 mb-3">
+              Engineering physical intelligence. Integrating ROS 2, computer vision, and behavior tree autonomy into service robotics.
+            </p>
+            {/* View Mode Toggle */}
+            <div className="inline-flex p-1 bg-[#202020] border border-white/15 rounded-xs font-mono text-xs">
+              <button
+                type="button"
+                onClick={() => setViewMode("exploded")}
+                className={`px-3 py-1 rounded-2xs transition-colors flex items-center gap-1.5 ${
+                  viewMode === "exploded"
+                    ? "bg-[#A33A32] text-white font-bold"
+                    : "text-white/60 hover:text-white"
+                }`}
+              >
+                <Layers size={13} />
+                <span>3D Exploded View</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode("image")}
+                className={`px-3 py-1 rounded-2xs transition-colors flex items-center gap-1.5 ${
+                  viewMode === "image"
+                    ? "bg-[#A33A32] text-white font-bold"
+                    : "text-white/60 hover:text-white"
+                }`}
+              >
+                <Eye size={13} />
+                <span>Physical Unit Frame</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Feature Hero Card: Guide Robot */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch mb-16">
-          {/* Main Visual Frame with HUD Telemetry Overlay */}
+          {/* Main Visual Frame with Toggleable 3D Exploded View or Physical Stills Frame */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col justify-between p-3 bg-[#202020] border border-white/15 rounded-xs relative group shadow-2xl"
+            className="lg:col-span-7 flex flex-col justify-between"
           >
-            {/* Top HUD Telemetry */}
-            <div className="flex items-center justify-between px-3 py-2 bg-[#121212]/90 border-b border-white/10 text-[11px] font-mono text-white/70 mb-3 rounded-xs">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#A33A32] animate-pulse" />
-                <span className="text-white font-semibold">ROS 2 NODE: /guide_robot_core</span>
+            {viewMode === "exploded" ? (
+              <RoboticsExplodedView scrollExplode={isInView ? 0.5 : 0} />
+            ) : (
+              <div className="flex flex-col justify-between p-3 bg-[#202020] border border-white/15 rounded-xs relative group shadow-2xl h-full">
+                {/* Top HUD Telemetry */}
+                <div className="flex items-center justify-between px-3 py-2 bg-[#121212]/90 border-b border-white/10 text-[11px] font-mono text-white/70 mb-3 rounded-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#A33A32] animate-pulse" />
+                    <span className="text-white font-semibold">ROS 2 NODE: /guide_robot_core</span>
+                  </div>
+                  <span className="text-[#A33A32]">SLAM STATUS: ACTIVE</span>
+                </div>
+
+                {/* Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-black rounded-xs">
+                  <img
+                    src={ROBOTICS_PROJECT.image}
+                    alt="Guide Robot ROS 2 Showcase"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-95 contrast-105"
+                  />
+
+                  {/* LIDAR Overlay Grid Simulation */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+
+                  {/* Bottom Sensor Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-xs text-white/80 bg-black/60 backdrop-blur-xs p-3 rounded-xs border border-white/10">
+                    <div className="flex items-center gap-2">
+                      <Navigation size={15} className="text-[#A33A32]" />
+                      <span>Nav2 Pathfinding: Converged</span>
+                    </div>
+                    <div className="hidden sm:block text-[11px] text-white/60">
+                      LIDAR Rate: 10 Hz · IMU: 100 Hz
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Specs Bar */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-3 border-t border-white/10 font-mono text-[11px]">
+                  {ROBOTICS_PROJECT.specs.map((spec, i) => (
+                    <div key={i} className="p-2 bg-[#181818] rounded-xs border border-white/5">
+                      <div className="text-white/40 uppercase">{spec.label}</div>
+                      <div className="text-white/90 font-medium truncate">{spec.val}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <span className="text-[#A33A32]">SLAM STATUS: ACTIVE</span>
-            </div>
-
-            {/* Image Container */}
-            <div className="relative aspect-[16/10] overflow-hidden bg-black rounded-xs">
-              <img
-                src={ROBOTICS_PROJECT.image}
-                alt="Guide Robot ROS 2 Showcase"
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-95 contrast-105"
-              />
-
-              {/* LIDAR Overlay Grid Simulation */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-
-              {/* Bottom Sensor Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-xs text-white/80 bg-black/60 backdrop-blur-xs p-3 rounded-xs border border-white/10">
-                <div className="flex items-center gap-2">
-                  <Navigation size={15} className="text-[#A33A32]" />
-                  <span>Nav2 Pathfinding: Converged</span>
-                </div>
-                <div className="hidden sm:block text-[11px] text-white/60">
-                  LIDAR Rate: 10 Hz · IMU: 100 Hz
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Specs Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-3 border-t border-white/10 font-mono text-[11px]">
-              {ROBOTICS_PROJECT.specs.map((spec, i) => (
-                <div key={i} className="p-2 bg-[#181818] rounded-xs border border-white/5">
-                  <div className="text-white/40 uppercase">{spec.label}</div>
-                  <div className="text-white/90 font-medium truncate">{spec.val}</div>
-                </div>
-              ))}
-            </div>
+            )}
           </motion.div>
 
           {/* Right Column: Project Architecture & Technical Objectives */}
