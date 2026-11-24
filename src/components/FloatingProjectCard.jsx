@@ -191,7 +191,7 @@ export default function FloatingProjectCard({ project, index }) {
             </a>
           ) : (
             <span className="font-mono text-[11px] text-[#8E8B83] italic">
-              Deployment in Staging
+              Internal Deployment
             </span>
           )}
         </div>

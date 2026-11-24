@@ -1,7 +1,7 @@
 /**
  * Portfolio Data for SRIMAN B.
  * Editorial Creative Studio & Developer Portfolio
- * Easy to customize and replace placeholders with user's verified links and assets.
+ * Central source for the portfolio's personal identity and links.
  */
 
 export const PERSONAL_INFO = {
@@ -9,15 +9,17 @@ export const PERSONAL_INFO = {
   role: "Creative Technologist / Visual Storyteller",
   tagline: "IDEAS INTO EXPERIENCES.",
   supportingText: "FULL STACK × AI × ROBOTICS × VISUAL STORYTELLING",
-  location: "Available Worldwide · Remote / Hybrid",
-  status: "Available for work",
-  email: "sriman.creative@example.com", // Replace with your verified email
+  location: "",
+  status: "",
+  email: "sman771960@gmail.com",
   socials: {
-    github: "https://github.com", // Replace with your personal GitHub URL
-    linkedin: "https://linkedin.com", // Replace with your personal LinkedIn URL
-    instagram: "https://instagram.com", // Replace with your personal Instagram URL
+    github: "https://github.com/Sriman-ml97",
+    linkedin: "https://www.linkedin.com/in/sriman-b-493409373",
+    instagram: "https://www.instagram.com/sri.man_offl?bqrl=MXRmdDNzM3VhdTdlaw==",
   },
-  portrait: "/images/portrait.jpg",
+  portrait: "/images/sriman-portrait.jpg",
+  cinematographerImage: "/images/sriman-cinematographer.png",
+  editorialPortrait: "/images/sriman-editorial.jpg",
   heroVideo: "/videos/showreel.mp4",
   heroPoster: "/images/hero-poster.jpg",
   bioPhilosophy: {
@@ -47,9 +49,10 @@ export const PROJECTS = [
     description: "Distributed telemetry and edge computing platform that ingests real-time multi-camera video streams, applies on-the-fly inference, and renders low-latency 60fps WebGL telemetry feeds.",
     tags: ["React", "Vite", "Node.js", "WebSockets", "Python", "OpenCV"],
     metrics: "< 45ms Latency · Multi-Stream Sync",
-    image: "/images/project-1.jpg",
-    github: "https://github.com", // Replace with actual project repository if desired
-    liveDemo: null, // Keep null or set to live URL when deployed
+    image: "/images/projects/fullstack/dashboard-analytics.jpg",
+    imageType: "illustrative_concept",
+    github: "https://github.com/Sriman-ml97",
+    liveDemo: null,
     featured: true
   },
   {
@@ -61,8 +64,9 @@ export const PROJECTS = [
     description: "An editorial digital synthesizer that visualizes audio wave frequencies into interactive shaders and kinetic typography with micro-gesture feedback.",
     tags: ["React", "Motion", "GSAP", "Web Audio API", "WebGL"],
     metrics: "Sub-16ms Frame Times · Kinetic Shader Pipeline",
-    image: "/images/project-2.jpg",
-    github: "https://github.com", // Replace with actual project repository if desired
+    image: "/images/projects/ai-ml/neural-network.jpg",
+    imageType: "illustrative_concept",
+    github: "https://github.com/Sriman-ml97",
     liveDemo: null,
     featured: true
   },
@@ -75,8 +79,9 @@ export const PROJECTS = [
     description: "High-throughput dashboard connecting field hardware sensors via MQTT and Redis, rendering real-time vector graphs and fault diagnosis in mission-critical environments.",
     tags: ["TypeScript", "React", "FastAPI", "MQTT", "Redis", "Tailwind"],
     metrics: "10,000+ points/sec Ingestion · Anomaly Detection",
-    image: "/images/project-3.jpg",
-    github: "https://github.com", // Replace with actual project repository if desired
+    image: "/images/projects/fullstack/workstation-code.jpg",
+    imageType: "illustrative_concept",
+    github: "https://github.com/Sriman-ml97",
     liveDemo: null,
     featured: false
   }
@@ -87,7 +92,8 @@ export const ROBOTICS_PROJECT = {
   title: "Autonomous Guide Robot",
   tagline: "Intelligent Navigation, Obstacle Avoidance & Human-Robot Interaction.",
   overview: "Developed as an autonomous indoor service and guidance robot engineered using ROS 2 (Robot Operating System 2) and Python. The robot dynamically navigates human-dense hallways, builds real-time SLAM spatial maps, and delivers polite, voice-guided interactive assistance.",
-  image: "/images/robotics.jpg",
+  image: "/images/projects/robotics/guide-robot-concept.jpg",
+  imageType: "illustrative_concept",
   techStack: [
     { name: "ROS 2", role: "Middleware, Node Graph & Inter-Process Comm" },
     { name: "Python", role: "Behavior Trees, Logic & Sensor Interfacing" },
@@ -135,7 +141,8 @@ export const VISUAL_STORIES = [
     role: "Director of Photography · Colorist",
     specs: "Anamorphic 35mm Emulation · DaVinci Resolve",
     description: "A contemplative architectural study of brutalist concrete silhouettes contrasted against neon rain reflections.",
-    thumbnail: "/images/cinema-1.jpg",
+    thumbnail: "/images/photography/tokyo-architecture.jpg",
+    imageType: "illustrative_concept",
     videoSrc: "/videos/showreel.mp4",
     duration: "02:45"
   },
@@ -147,7 +154,8 @@ export const VISUAL_STORIES = [
     role: "Director · Lead Editor",
     specs: "4K UHD · Premiere Pro · Original Score",
     description: "An intimate short documentary tracing the parallel hands of traditional craftsmen and robotic arm technicians.",
-    thumbnail: "/images/cinema-2.jpg",
+    thumbnail: "/images/cinematography/camera-rig.jpg",
+    imageType: "illustrative_concept",
     videoSrc: "/videos/showreel.mp4",
     duration: "04:12"
   },
@@ -159,19 +167,21 @@ export const VISUAL_STORIES = [
     role: "Editor · Sound Designer",
     specs: "Kinetic Cut · Dynamic Sound Design",
     description: "High-cadence editorial commercial reel built on micro-second match cuts and physical camera whip pans.",
-    thumbnail: "/images/cinema-3.jpg",
+    thumbnail: "/images/cinematography/editing-suite.jpg",
+    imageType: "illustrative_concept",
     videoSrc: "/videos/showreel.mp4",
     duration: "01:30"
   },
   {
     id: "cinema-04",
     index: "04",
-    title: "Raw Horizon",
-    category: "Photography",
-    role: "Photographer",
-    specs: "Natural Light · Medium Format",
-    description: "Street and portraiture series capturing unprompted gestures in transient public transit corridors.",
-    thumbnail: "/images/cinema-4.jpg",
+    title: "Raw Horizon & Street Stills",
+    category: "Photography & Editorial",
+    role: "Photographer · Director",
+    specs: "35mm Medium Format · Kodak Gold Tone",
+    description: "Personal portraiture and cinematic road series examining transient moments, human gestures, and vintage automotive reflections.",
+    thumbnail: "/images/sriman-editorial.jpg",
+    imageType: "personal_actual",
     videoSrc: "/videos/showreel.mp4",
     duration: "Photo Essay"
   }

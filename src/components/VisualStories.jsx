@@ -3,7 +3,7 @@ import { motion, useInView, useMotionValue, useSpring, useTransform } from "moti
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { Play, Film, Camera, Clapperboard, Sparkles, Eye, ArrowUpRight } from "lucide-react";
+import { Play, Film, Camera, Clapperboard, Sparkles, Eye, ArrowUpRight, Aperture, Video, Compass } from "lucide-react";
 import { VISUAL_STORIES } from "../data/projects";
 
 // Register GSAP plugins
@@ -39,12 +39,10 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
   };
 
   const getCategoryIcon = (category) => {
-    switch (category) {
-      case "Cinematography": return Film;
-      case "Photography": return Camera;
-      case "Video Editing": return Clapperboard;
-      default: return Sparkles;
-    }
+    if (category.includes("Cinematography")) return Film;
+    if (category.includes("Photography")) return Camera;
+    if (category.includes("Video Editing")) return Clapperboard;
+    return Sparkles;
   };
 
   const Icon = getCategoryIcon(item.category);
@@ -95,8 +93,11 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
             style={{ transform: "translateZ(30px)" }}
             className="absolute top-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-white/90 pointer-events-none"
           >
-            <span className="px-2 py-0.5 rounded-xs bg-black/60 backdrop-blur-xs border border-white/10">
-              REEL // {item.index}
+            <span className="px-2 py-0.5 rounded-xs bg-black/60 backdrop-blur-xs border border-white/10 flex items-center gap-2">
+              <span>REEL // {item.index}</span>
+              <span className="text-[#A33A32] font-semibold text-[9px]">
+                {item.imageType === "personal_actual" ? "★ ACTUAL ARCHIVE" : "CONCEPT VISUAL"}
+              </span>
             </span>
             <span className="px-2 py-0.5 rounded-xs bg-[#A33A32] text-white font-medium">
               {item.duration}
@@ -148,7 +149,15 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
 export default function VisualStories({ onOpenVideo }) {
   const sectionRef = useRef(null);
 
-  // Requirement: Stage 6 Cinematic Film Gallery Scroll Parallax
+  const storytellingPillars = [
+    { title: "Cinematography", icon: Film, detail: "Anamorphic 35mm framing, deliberate lighting ratios & optical lens textures." },
+    { title: "Photography", icon: Camera, detail: "Medium format road essays, candid street vignettes & timeless portraits." },
+    { title: "Video Editing", icon: Clapperboard, detail: "Cadence, match cutting, dynamic speed ramps & rhythmic storytelling." },
+    { title: "Visual Storytelling", icon: Video, detail: "Translating unspoken human emotion into enduring visual narratives." },
+    { title: "Creative Direction", icon: Compass, detail: "Comprehensive aesthetic cohesion across sound, image & technology." }
+  ];
+
+  // Stage 6 Cinematic Film Gallery Scroll Parallax
   useGSAP(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -221,7 +230,7 @@ export default function VisualStories({ onOpenVideo }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#171717]/15 pb-8 mb-16">
           <div>
             <div className="editorial-kicker mb-3">
-              STAGE 06 // CINEMATIC FILM GALLERY
+              04 // VISUAL STORIES
             </div>
             <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-[#171717]">
               VISUAL STORIES.
@@ -235,6 +244,67 @@ export default function VisualStories({ onOpenVideo }) {
             <span className="font-mono text-[11px] text-[#A33A32]">
               SCROLL FOR CINEMATIC REEL GLIDE · CLICK TO PLAY
             </span>
+          </div>
+        </div>
+
+        {/* ======================================================== */}
+        {/* VISUAL ANCHOR: SRIMAN CINEMATOGRAPHER EDITORIAL BANNER   */}
+        {/* ======================================================== */}
+        <div className="mb-20 p-6 sm:p-10 bg-[#171717] text-[#F2F0E9] border border-[#171717]/20 rounded-xs shadow-2xl relative overflow-hidden">
+          {/* Subtle Ambient Red Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#A33A32]/15 blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Left Anchor Image: Sriman Holding Camera Cutout */}
+            <div className="lg:col-span-4 flex items-center justify-center">
+              <div className="relative w-56 sm:w-64 aspect-[9/16] flex items-end justify-center">
+                <img
+                  src="/images/sriman-cinematographer.png"
+                  alt="Sriman B. with Camera — Visual Storyteller"
+                  loading="lazy"
+                  className="max-h-full object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]"
+                />
+                <div className="absolute -bottom-1 font-mono text-[10px] bg-black/80 text-white/80 px-2 py-0.5 rounded-xs border border-white/10">
+                  CAMERA OPERATOR // SRIMAN B.
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Passions & Core Storytelling Pillars */}
+            <div className="lg:col-span-8 flex flex-col justify-between gap-6">
+              <div>
+                <span className="font-mono text-xs text-[#A33A32] uppercase tracking-widest font-semibold block mb-2">
+                  THE VISUAL ANCHOR
+                </span>
+                <h3 className="font-sans font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight mb-3">
+                  CRAFTING STORIES THROUGH LIGHT, LENSES & MOTION
+                </h3>
+                <p className="font-body text-white/70 text-sm sm:text-base leading-relaxed">
+                  Cinematography and video editing are not just technical crafts—they are the language through which I translate complex ideas and raw human sentiment into visceral, cinematic journeys.
+                </p>
+              </div>
+
+              {/* 5 Storytelling Disciplines Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-4 border-t border-white/10 font-mono">
+                {storytellingPillars.map((p, idx) => {
+                  const PillarIcon = p.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="p-3 bg-[#202020] border border-white/10 rounded-xs hover:border-[#A33A32]/50 transition-colors"
+                    >
+                      <div className="flex items-center gap-2 text-xs text-[#A33A32] font-semibold mb-1">
+                        <PillarIcon size={14} />
+                        <span>{p.title}</span>
+                      </div>
+                      <p className="text-[11px] text-white/60 leading-normal font-sans">
+                        {p.detail}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
 

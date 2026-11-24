@@ -215,14 +215,13 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
       <div className="px-3 py-2 bg-[#121212] border-t border-white/10 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-[10px] text-white/50 z-20">
         <div className="flex items-center gap-2">
           <Layers size={12} className="text-[#A33A32]" />
-          <span>HOVER ANY SUBSYSTEM LAYER FOR ACTIVE BUS TELEMETRY</span>
         </div>
         <div className="text-[#A33A32] font-medium">
           {activeLayer
-            ? `SELECTED: ${activeLayer.toUpperCase()} SUBSYSTEM ACTIVE`
+            ? `ACTIVE SUBSYSTEM // ${activeLayer.toUpperCase()}`
             : isExplodedActive
-            ? "ALL SUBSYSTEMS FULLY DISASSEMBLED"
-            : "PRESS BUTTON OR SCROLL TO DISASSEMBLE"}
+            ? "ALL SUBSYSTEMS EXPLODED"
+            : "COMPACT VIEW"}
         </div>
       </div>
     </div>

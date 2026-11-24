@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ChevronDown, Play, Sparkles, Layers } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
 import { PERSONAL_INFO } from "../data/projects";
-import HeroDisassembly from "./HeroDisassembly";
+import CinematographerHeroCutout from "./CinematographerHeroCutout";
 
 export default function Hero({ onOpenReel }) {
   const containerRef = useRef(null);
@@ -93,6 +93,12 @@ export default function Hero({ onOpenReel }) {
         {/* Dark Cinematic Vignette & Gradients */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/50 to-[#121212]/70" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(18,18,18,0.8)_85%)]" />
+
+        {/* Subtle Anamorphic Light Leak Optical Texture */}
+        <div
+          className="absolute inset-0 bg-cover bg-center mix-blend-screen opacity-15 pointer-events-none"
+          style={{ backgroundImage: "url('/images/textures/anamorphic-light-leak.jpg')" }}
+        />
       </motion.div>
 
       {/* Hero Content Overlay */}
@@ -135,14 +141,15 @@ export default function Hero({ onOpenReel }) {
             </div>
           </motion.div>
 
-          {/* Main Tagline & 3D Disassembly Rig Grid */}
+          {/* Main Tagline & Cinematographer Cutout Composition */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mt-6 pt-4"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mt-4 pt-2"
           >
-            <div className="lg:col-span-7 flex flex-col justify-between">
+            {/* Left Column: Typography & Actions */}
+            <div className="lg:col-span-7 flex flex-col justify-between z-20">
               <div>
                 <p className="font-serif italic font-normal text-white/90 text-[clamp(1.75rem,4.2vw,4rem)] leading-[1.05] tracking-tight">
                   {PERSONAL_INFO.tagline}
@@ -169,7 +176,7 @@ export default function Hero({ onOpenReel }) {
                     role: "Creative Technologist / Filmmaker"
                   })}
                   data-cursor-hover="true"
-                  className="group flex items-center gap-4 px-5 py-3 rounded-xs border border-white/20 bg-white/5 hover:bg-[#A33A32] hover:border-[#A33A32] transition-all duration-300"
+                  className="group flex items-center gap-4 px-5 py-3 rounded-xs border border-white/20 bg-white/5 hover:bg-[#A33A32] hover:border-[#A33A32] transition-all duration-300 shadow-xl"
                 >
                   <div className="w-8 h-8 rounded-full bg-white text-[#121212] flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Play size={14} className="ml-0.5 fill-current" />
@@ -179,16 +186,16 @@ export default function Hero({ onOpenReel }) {
                       Watch Showreel
                     </div>
                     <div className="text-[10px] text-white/50 group-hover:text-white/80">
-                      Replaceable in /public/videos/
+                      Systems & Visual Narrative
                     </div>
                   </div>
                 </button>
               </div>
             </div>
 
-            {/* Stage 2 / 3D Disassembly Rig in Hero */}
-            <div className="lg:col-span-5 hidden sm:block">
-              <HeroDisassembly scrollProgress={scrollYProgress} />
+            {/* Right Column: Sriman Cutout Prominently Positioned Inside Cinematic Scene */}
+            <div className="lg:col-span-5 relative flex items-center justify-center">
+              <CinematographerHeroCutout scrollProgress={scrollYProgress} />
             </div>
           </motion.div>
         </div>
@@ -215,12 +222,6 @@ export default function Hero({ onOpenReel }) {
           </a>
         </motion.div>
       </motion.div>
-
-      {/* Replaceable Asset Note Pill */}
-      <div className="absolute top-24 right-6 z-20 hidden xl:flex items-center gap-2 px-3 py-1 rounded-xs bg-[#171717]/80 border border-white/10 text-[10px] font-mono text-white/60 backdrop-blur-xs">
-        <Sparkles size={12} className="text-[#A33A32]" />
-        <span>REPLACEABLE SHOWREEL: /public/videos/showreel.mp4</span>
-      </div>
     </section>
   );
 }

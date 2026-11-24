@@ -79,7 +79,7 @@ export default function Contact() {
         {/* Section Kicker */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-16">
           <div className="editorial-kicker text-[#A33A32]">
-            STAGE 07 // FINAL REVEAL & TRANSMISSION
+            05 // CONTACT
           </div>
           <div className="font-mono text-xs text-white/50 uppercase tracking-wider">
             Initiate Contact

@@ -98,7 +98,7 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#171717]/15 pb-8 mb-16">
           <div>
             <div className="editorial-kicker mb-3">
-              STAGE 04 // ENGINEERING & MOVING FRAMES
+              02 // SELECTED WORKS
             </div>
             <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-[#171717]">
               THINGS I'VE BUILT.
@@ -110,7 +110,7 @@ export default function Projects() {
               Architected for performance, visual precision and fault tolerance. Exploring distributed edge systems, WebGL pipelines, and modern web applications.
             </p>
             <span className="font-mono text-[11px] text-[#A33A32]">
-              SCROLL FOR MOVING FRAMES · HOVER FOR 3D TILT TELEMETRY
+              Full Stack Systems & AI Telemetry
             </span>
           </div>
         </div>

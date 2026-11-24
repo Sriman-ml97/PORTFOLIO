@@ -24,7 +24,7 @@ export default function Robotics() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8 mb-16">
           <div>
             <div className="editorial-kicker text-[#A33A32] mb-3">
-              STAGE 05 // INNOVATION & TECHNICAL DISASSEMBLY
+              03 // AUTONOMOUS ROBOTICS
             </div>
             <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-white">
               AUTONOMOUS SYSTEMS.
@@ -84,7 +84,7 @@ export default function Robotics() {
                     <span className="w-2 h-2 rounded-full bg-[#A33A32] animate-pulse" />
                     <span className="text-white font-semibold">ROS 2 NODE: /guide_robot_core</span>
                   </div>
-                  <span className="text-[#A33A32]">SLAM STATUS: ACTIVE</span>
+                  <span className="text-[#A33A32]">ILLUSTRATIVE HARDWARE PLATFORM</span>
                 </div>
 
                 {/* Image Container */}
