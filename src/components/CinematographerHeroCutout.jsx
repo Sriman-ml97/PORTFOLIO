@@ -37,7 +37,7 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-lg mx-auto h-[520px] sm:h-[600px] lg:h-[680px] flex items-end justify-center select-none perspective-[1200px]"
+      className="relative w-full max-w-md mx-auto h-[360px] sm:h-[420px] lg:h-[clamp(360px,56vh,540px)] flex items-end justify-center select-none perspective-[1200px]"
     >
       {/* 3D Preserved Layered Space */}
       <motion.div
@@ -54,7 +54,7 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
         {/* ========================================================= */}
         <div
           style={{ transform: "translateZ(-60px)" }}
-          className="absolute inset-x-4 top-8 bottom-8 rounded-xs border border-white/10 bg-gradient-to-b from-white/5 via-transparent to-black/40 pointer-events-none p-4 flex flex-col justify-between"
+          className="absolute inset-x-4 top-4 bottom-4 rounded-xs border border-white/10 bg-gradient-to-b from-white/5 via-transparent to-black/40 pointer-events-none p-4 flex flex-col justify-between"
         >
           {/* Top Camera Metadata */}
           <div className="flex items-center justify-between font-mono text-[10px] text-white/50">
@@ -67,7 +67,7 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
 
           {/* Center Reticle */}
           <div className="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none">
-            <Crosshair size={140} className="text-[#A33A32]" />
+            <Crosshair size={110} className="text-[#A33A32]" />
           </div>
 
           {/* Bottom Viewfinder Indices */}
@@ -128,7 +128,7 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.75, duration: 0.8 }}
-          className="absolute left-2 bottom-20 z-20 font-mono text-[10px] bg-black/80 backdrop-blur-md px-3 py-2 border border-white/15 text-white/90 rounded-xs shadow-xl hidden sm:flex flex-col gap-1"
+          className="absolute left-2 bottom-12 z-20 font-mono text-[10px] bg-black/80 backdrop-blur-md px-3 py-2 border border-white/15 text-white/90 rounded-xs shadow-xl hidden sm:flex flex-col gap-1"
         >
           <div className="flex items-center gap-1.5 text-[#A33A32] font-semibold text-[9px] uppercase tracking-wider">
             <Camera size={11} />
@@ -144,7 +144,7 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.85, duration: 0.8 }}
-          className="absolute right-2 top-24 z-20 font-mono text-[10px] bg-black/80 backdrop-blur-md px-3 py-1.5 border border-white/15 text-white/80 rounded-xs shadow-xl hidden md:flex items-center gap-2"
+          className="absolute right-2 top-16 z-20 font-mono text-[10px] bg-black/80 backdrop-blur-md px-3 py-1.5 border border-white/15 text-white/80 rounded-xs shadow-xl hidden md:flex items-center gap-2"
         >
           <Aperture size={12} className="text-[#A33A32]" />
           <span>REAL-TIME FRAMING ACTIVE</span>
