@@ -38,12 +38,12 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full aspect-[16/11] sm:aspect-[16/10] perspective-[1400px] select-none p-2 sm:p-4 bg-[#181818] border border-white/15 rounded-xs shadow-2xl flex flex-col justify-between"
+      className="relative w-full aspect-[16/11] sm:aspect-[16/10] perspective-[1400px] select-none p-2 sm:p-4 bg-[#082B20] border border-white/15 rounded-xs shadow-2xl flex flex-col justify-between"
     >
       {/* Top HUD Status Bar */}
-      <div className="flex items-center justify-between px-3 py-2 bg-[#121212]/90 border border-white/10 rounded-xs text-[11px] font-mono text-white/70 z-30">
+      <div className="flex items-center justify-between px-3 py-2 bg-[#06241B]/90 border border-white/10 rounded-xs text-[11px] font-mono text-white/70 z-30">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#A33A32] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#B82B2B] animate-pulse" />
           <span className="text-white font-semibold">ROS 2 SUBSYSTEM EXPLODED VIEW</span>
         </div>
         <div className="flex items-center gap-3">
@@ -53,7 +53,7 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
             data-cursor-hover="true"
             className={`px-2.5 py-1 rounded-2xs font-mono text-[10px] uppercase tracking-wider transition-colors ${
               isExplodedActive
-                ? "bg-[#A33A32] text-white font-bold"
+                ? "bg-[#B82B2B] text-white font-bold"
                 : "bg-white/10 hover:bg-white/20 text-white/80"
             }`}
           >
@@ -84,12 +84,12 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
           style={{ transformStyle: "preserve-3d" }}
           className={`absolute w-[90%] h-[32%] -bottom-2 rounded-xs border p-3 flex flex-col justify-between cursor-pointer transition-colors ${
             activeLayer === "base"
-              ? "bg-[#252525] border-[#A33A32]"
-              : "bg-[#1C1C1C]/90 border-white/10"
+              ? "bg-[#114838] border-[#B82B2B]"
+              : "bg-[#0A3327]/90 border-white/10"
           }`}
         >
           <div className="flex items-center justify-between font-mono text-[10px]">
-            <span className="text-[#A33A32] font-semibold">04 // MOBILITY DRIVE BASE</span>
+            <span className="text-[#B82B2B] font-semibold">04 // MOBILITY DRIVE BASE</span>
             <span className="text-white/40">Z: -80mm · PWM MOTORS</span>
           </div>
           <div className="flex items-center justify-between font-mono text-[11px] text-white/80">
@@ -111,12 +111,12 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
           style={{ transformStyle: "preserve-3d" }}
           className={`absolute w-[92%] h-[40%] rounded-xs border p-3.5 flex flex-col justify-between cursor-pointer transition-colors ${
             activeLayer === "chassis"
-              ? "bg-[#252525] border-[#A33A32]"
-              : "bg-[#1E1E1E]/90 border-white/15"
+              ? "bg-[#114838] border-[#B82B2B]"
+              : "bg-[#0B362A]/90 border-white/15"
           }`}
         >
           {/* Central Blueprint Grid Simulation */}
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#A33A32_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none" />
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B82B2B_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none" />
 
           <div className="flex items-center justify-between font-mono text-[10px] z-10">
             <span className="text-white font-semibold">03 // ALUMINUM STRUCTURAL CHASSIS</span>
@@ -151,12 +151,12 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
           style={{ transformStyle: "preserve-3d" }}
           className={`absolute w-[86%] h-[34%] rounded-xs border p-3 flex flex-col justify-between cursor-pointer transition-colors shadow-xl ${
             activeLayer === "compute"
-              ? "bg-[#272727] border-[#A33A32]"
-              : "bg-[#222222]/95 border-white/20"
+              ? "bg-[#134E3D] border-[#B82B2B]"
+              : "bg-[#0F4233]/95 border-white/20"
           }`}
         >
           <div className="flex items-center justify-between font-mono text-[10px]">
-            <span className="text-[#A33A32] font-semibold flex items-center gap-1.5">
+            <span className="text-[#B82B2B] font-semibold flex items-center gap-1.5">
               <Cpu size={12} />
               02 // AI NEURAL COMPUTE CORE
             </span>
@@ -165,7 +165,7 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
 
           <div className="flex items-center justify-between font-mono text-[11px] text-white/90">
             <span>NVIDIA Jetson Edge Inference</span>
-            <span className="text-[#A33A32]">Nav2 Costmap: 50Hz</span>
+            <span className="text-[#B82B2B]">Nav2 Costmap: 50Hz</span>
           </div>
 
           <div className="flex items-center justify-between font-mono text-[9px] text-white/50 border-t border-white/10 pt-1">
@@ -187,16 +187,16 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
           style={{ transformStyle: "preserve-3d" }}
           className={`absolute w-[88%] h-[32%] -top-2 rounded-xs border-2 p-3 flex flex-col justify-between cursor-pointer transition-colors shadow-2xl ${
             activeLayer === "lidar"
-              ? "bg-[#2a2a2a] border-[#A33A32]"
-              : "bg-[#202020]/95 border-white/30"
+              ? "bg-[#155442] border-[#B82B2B]"
+              : "bg-[#0D3D30]/95 border-white/30"
           }`}
         >
           <div className="flex items-center justify-between font-mono text-[10px]">
             <span className="text-white font-bold flex items-center gap-1.5">
-              <Navigation size={12} className="text-[#A33A32]" />
+              <Navigation size={12} className="text-[#B82B2B]" />
               01 // SENSOR & LIDAR SLAM TURRET
             </span>
-            <span className="text-[#A33A32] font-bold">Z: +170mm</span>
+            <span className="text-[#B82B2B] font-bold">Z: +170mm</span>
           </div>
 
           <div className="flex items-center justify-between font-mono text-[11px] text-white/90">
@@ -212,11 +212,11 @@ export default function RoboticsExplodedView({ scrollExplode = 0 }) {
       </motion.div>
 
       {/* Bottom Telemetry Legend */}
-      <div className="px-3 py-2 bg-[#121212] border-t border-white/10 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-[10px] text-white/50 z-20">
+      <div className="px-3 py-2 bg-[#06241B] border-t border-white/10 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-[10px] text-white/50 z-20">
         <div className="flex items-center gap-2">
-          <Layers size={12} className="text-[#A33A32]" />
+          <Layers size={12} className="text-[#B82B2B]" />
         </div>
-        <div className="text-[#A33A32] font-medium">
+        <div className="text-[#B82B2B] font-medium">
           {activeLayer
             ? `ACTIVE SUBSYSTEM // ${activeLayer.toUpperCase()}`
             : isExplodedActive

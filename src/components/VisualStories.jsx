@@ -64,7 +64,7 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
           rotateY,
           transformStyle: "preserve-3d"
         }}
-        className="group relative flex flex-col bg-[#FAF9F6] border border-[#171717]/15 rounded-xs p-3 hover:border-[#A33A32]/60 transition-all duration-300 shadow-sm hover:shadow-2xl"
+        className="group relative flex flex-col bg-[#F8FBF8] border border-[#09221A]/15 rounded-xs p-3 hover:border-[#B82B2B]/60 transition-all duration-300 shadow-sm hover:shadow-2xl"
       >
         {/* Media Container with 16:9 Aspect Ratio */}
         <div className="relative aspect-video overflow-hidden bg-black rounded-xs mb-4">
@@ -83,7 +83,7 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
             style={{ transform: "translateZ(45px)" }}
             className="absolute inset-0 flex items-center justify-center pointer-events-none"
           >
-            <div className="w-14 h-14 rounded-full bg-[#A33A32] text-white flex items-center justify-center transform scale-90 group-hover:scale-115 transition-transform duration-300 shadow-xl group-hover:bg-[#BF453B]">
+            <div className="w-14 h-14 rounded-full bg-[#B82B2B] text-white flex items-center justify-center transform scale-90 group-hover:scale-115 transition-transform duration-300 shadow-xl group-hover:bg-[#D13838]">
               <Play size={20} className="ml-1 fill-current" />
             </div>
           </div>
@@ -95,11 +95,11 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
           >
             <span className="px-2 py-0.5 rounded-xs bg-black/60 backdrop-blur-xs border border-white/10 flex items-center gap-2">
               <span>REEL // {item.index}</span>
-              <span className="text-[#A33A32] font-semibold text-[9px]">
+              <span className="text-[#B82B2B] font-semibold text-[9px]">
                 {item.imageType === "personal_actual" ? "★ ACTUAL ARCHIVE" : "CONCEPT VISUAL"}
               </span>
             </span>
-            <span className="px-2 py-0.5 rounded-xs bg-[#A33A32] text-white font-medium">
+            <span className="px-2 py-0.5 rounded-xs bg-[#B82B2B] text-white font-medium">
               {item.duration}
             </span>
           </div>
@@ -110,7 +110,7 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
             className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-white/80 pointer-events-none"
           >
             <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded-xs">
-              <Icon size={12} className="text-[#A33A32]" />
+              <Icon size={12} className="text-[#B82B2B]" />
               <span>{item.category}</span>
             </div>
             <span className="hidden sm:inline bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded-xs text-white/60">
@@ -122,21 +122,21 @@ function CinematicGalleryCard({ item, index, onOpenVideo }) {
         {/* Details Footer */}
         <div className="px-2 pb-2">
           <div className="flex items-start justify-between gap-4 mb-2">
-            <h3 className="font-sans font-bold text-xl sm:text-2xl text-[#171717] group-hover:text-[#A33A32] transition-colors">
+            <h3 className="font-sans font-bold text-xl sm:text-2xl text-[#09221A] group-hover:text-[#B82B2B] transition-colors">
               {item.title}
             </h3>
-            <span className="font-mono text-xs text-[#A33A32] font-semibold shrink-0">
+            <span className="font-mono text-xs text-[#B82B2B] font-semibold shrink-0">
               {item.role}
             </span>
           </div>
 
-          <p className="font-body text-[#5E5B55] text-sm leading-relaxed mb-3">
+          <p className="font-body text-[#355447] text-sm leading-relaxed mb-3">
             {item.description}
           </p>
 
-          <div className="pt-2 border-t border-[#171717]/10 flex items-center justify-between font-mono text-[11px] text-[#5E5B55]">
+          <div className="pt-2 border-t border-[#09221A]/10 flex items-center justify-between font-mono text-[11px] text-[#355447]">
             <span>COLOR GRADE: 35mm EMULATION</span>
-            <span className="text-[#171717] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold text-[#A33A32]">
+            <span className="text-[#09221A] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold text-[#B82B2B]">
               Launch Player &rarr;
             </span>
           </div>
@@ -223,25 +223,25 @@ export default function VisualStories({ onOpenVideo }) {
     <section
       id="visual-stories"
       ref={sectionRef}
-      className="relative w-full py-28 sm:py-36 bg-[#F2F0E9] text-[#171717] border-b border-[#171717]/10 overflow-hidden"
+      className="relative w-full py-28 sm:py-36 bg-[#F1F6F2] text-[#09221A] border-b border-[#09221A]/10 overflow-hidden"
     >
       <div className="editorial-container">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#171717]/15 pb-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#09221A]/15 pb-8 mb-16">
           <div>
             <div className="editorial-kicker mb-3">
               04 // VISUAL STORIES
             </div>
-            <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-[#171717]">
+            <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-[#09221A]">
               VISUAL STORIES.
             </h2>
           </div>
 
           <div className="max-w-md">
-            <p className="font-mono text-xs sm:text-sm text-[#5E5B55] mb-2">
+            <p className="font-mono text-xs sm:text-sm text-[#355447] mb-2">
               Framing human emotions across 24 frames per second. Direction, 35mm composition, color grading, and rhythmic sound design.
             </p>
-            <span className="font-mono text-[11px] text-[#A33A32]">
+            <span className="font-mono text-[11px] text-[#B82B2B]">
               SCROLL FOR CINEMATIC REEL GLIDE · CLICK TO PLAY
             </span>
           </div>
@@ -250,9 +250,9 @@ export default function VisualStories({ onOpenVideo }) {
         {/* ======================================================== */}
         {/* VISUAL ANCHOR: SRIMAN CINEMATOGRAPHER EDITORIAL BANNER   */}
         {/* ======================================================== */}
-        <div className="mb-20 p-6 sm:p-10 bg-[#171717] text-[#F2F0E9] border border-[#171717]/20 rounded-xs shadow-2xl relative overflow-hidden">
+        <div className="mb-20 p-6 sm:p-10 bg-[#09221A] text-[#F1F6F2] border border-[#09221A]/20 rounded-xs shadow-2xl relative overflow-hidden">
           {/* Subtle Ambient Red Glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#A33A32]/15 blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#B82B2B]/15 blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             {/* Left Anchor Image: Sriman Holding Camera Cutout */}
@@ -273,7 +273,7 @@ export default function VisualStories({ onOpenVideo }) {
             {/* Right: Passions & Core Storytelling Pillars */}
             <div className="lg:col-span-8 flex flex-col justify-between gap-6">
               <div>
-                <span className="font-mono text-xs text-[#A33A32] uppercase tracking-widest font-semibold block mb-2">
+                <span className="font-mono text-xs text-[#B82B2B] uppercase tracking-widest font-semibold block mb-2">
                   THE VISUAL ANCHOR
                 </span>
                 <h3 className="font-sans font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight mb-3">
@@ -291,9 +291,9 @@ export default function VisualStories({ onOpenVideo }) {
                   return (
                     <div
                       key={idx}
-                      className="p-3 bg-[#202020] border border-white/10 rounded-xs hover:border-[#A33A32]/50 transition-colors"
+                      className="p-3 bg-[#0D3D30] border border-white/10 rounded-xs hover:border-[#B82B2B]/50 transition-colors"
                     >
-                      <div className="flex items-center gap-2 text-xs text-[#A33A32] font-semibold mb-1">
+                      <div className="flex items-center gap-2 text-xs text-[#B82B2B] font-semibold mb-1">
                         <PillarIcon size={14} />
                         <span>{p.title}</span>
                       </div>

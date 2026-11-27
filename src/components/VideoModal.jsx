@@ -40,13 +40,13 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-5xl bg-[#121212] rounded-xs border border-white/10 shadow-2xl overflow-hidden flex flex-col"
+          className="relative w-full max-w-5xl bg-[#06241B] rounded-xs border border-white/10 shadow-2xl overflow-hidden flex flex-col"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#181818]/80 text-[#F2F0E9]">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#082B20]/80 text-[#F1F6F2]">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-xs px-2 py-0.5 rounded-xs bg-[#A33A32] text-white">
+              <span className="font-mono text-xs px-2 py-0.5 rounded-xs bg-[#B82B2B] text-white">
                 {videoData.category || "CINEMA"}
               </span>
               <h3 className="font-sans font-semibold text-sm sm:text-base tracking-wide">
@@ -78,14 +78,14 @@ export default function VideoModal({ isOpen, onClose, videoData }) {
           </div>
 
           {/* Metadata Footer */}
-          <div className="px-6 py-4 bg-[#181818] border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono text-white/60">
+          <div className="px-6 py-4 bg-[#082B20] border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono text-white/60">
             <div>
               <span className="text-white/40">SPECS: </span>
               <span className="text-white/80">{videoData.specs || "4K UHD · 24fps"}</span>
             </div>
             <div>
               <span className="text-white/40">ROLE: </span>
-              <span className="text-[#A33A32] font-medium">{videoData.role || "Director / Editor"}</span>
+              <span className="text-[#B82B2B] font-medium">{videoData.role || "Director / Editor"}</span>
             </div>
           </div>
         </motion.div>

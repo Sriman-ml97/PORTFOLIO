@@ -5,11 +5,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#121212] text-white/60 py-12 border-t border-white/10 font-mono text-xs">
+    <footer className="w-full bg-[#06241B] text-white/60 py-12 border-t border-white/10 font-mono text-xs">
       <div className="editorial-container flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Monogram & Studio Identity */}
         <div className="flex items-center gap-3">
-          <span className="px-2 py-0.5 rounded-xs bg-[#A33A32] text-white font-bold text-[11px]">
+          <span className="px-2 py-0.5 rounded-xs bg-[#B82B2B] text-white font-bold text-[11px]">
             SB
           </span>
           <span className="font-sans font-bold text-sm text-white">

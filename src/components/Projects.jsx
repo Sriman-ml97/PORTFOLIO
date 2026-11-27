@@ -91,25 +91,25 @@ export default function Projects() {
     <section
       id="work"
       ref={containerRef}
-      className="relative w-full py-28 sm:py-36 bg-[#E8E5DD] text-[#171717] border-b border-[#171717]/10 overflow-hidden"
+      className="relative w-full py-28 sm:py-36 bg-[#E3EDE6] text-[#09221A] border-b border-[#09221A]/10 overflow-hidden"
     >
       <div className="editorial-container">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#171717]/15 pb-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#09221A]/15 pb-8 mb-16">
           <div>
             <div className="editorial-kicker mb-3">
               02 // SELECTED WORKS
             </div>
-            <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-[#171717]">
+            <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-[#09221A]">
               THINGS I'VE BUILT.
             </h2>
           </div>
 
           <div className="max-w-md">
-            <p className="font-mono text-xs sm:text-sm text-[#5E5B55] mb-2">
+            <p className="font-mono text-xs sm:text-sm text-[#355447] mb-2">
               Architected for performance, visual precision and fault tolerance. Exploring distributed edge systems, WebGL pipelines, and modern web applications.
             </p>
-            <span className="font-mono text-[11px] text-[#A33A32]">
+            <span className="font-mono text-[11px] text-[#B82B2B]">
               Full Stack Systems & AI Telemetry
             </span>
           </div>

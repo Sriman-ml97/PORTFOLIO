@@ -85,14 +85,14 @@ export default function HeroDisassembly({ scrollProgress }) {
             rotateX: layer3RotateX,
             transformStyle: "preserve-3d"
           }}
-          className="absolute inset-4 rounded-xs bg-[#181818]/90 border border-white/10 p-5 shadow-2xl flex flex-col justify-between"
+          className="absolute inset-4 rounded-xs bg-[#082B20]/90 border border-white/10 p-5 shadow-2xl flex flex-col justify-between"
         >
           {/* Subtle Grid Lines */}
           <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
 
           <div className="flex items-center justify-between font-mono text-[10px] text-white/40">
             <span>SUB-LAYER 03 // BASE CHASSIS</span>
-            <span className="text-[#A33A32]">DEPTH: -90mm</span>
+            <span className="text-[#B82B2B]">DEPTH: -90mm</span>
           </div>
 
           <div className="my-auto text-center font-mono">
@@ -121,19 +121,19 @@ export default function HeroDisassembly({ scrollProgress }) {
             rotateY: layer2RotateY,
             transformStyle: "preserve-3d"
           }}
-          className="absolute inset-6 rounded-xs bg-[#202020]/75 backdrop-blur-md border border-[#A33A32]/40 p-4 shadow-xl flex flex-col justify-between pointer-events-none"
+          className="absolute inset-6 rounded-xs bg-[#0D3D30]/75 backdrop-blur-md border border-[#B82B2B]/40 p-4 shadow-xl flex flex-col justify-between pointer-events-none"
         >
           {/* Viewfinder Crosshair in Center */}
           <div className="absolute inset-0 flex items-center justify-center opacity-30">
-            <Crosshair size={64} className="text-[#A33A32]" />
+            <Crosshair size={64} className="text-[#B82B2B]" />
           </div>
 
           <div className="flex items-center justify-between font-mono text-[10px] z-10">
             <div className="flex items-center gap-1.5 text-white/80">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#A33A32] animate-ping" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#B82B2B] animate-ping" />
               <span>REC [00:24:16:08]</span>
             </div>
-            <span className="px-1.5 py-0.5 rounded-2xs bg-[#A33A32]/30 text-[#A33A32] text-[9px]">
+            <span className="px-1.5 py-0.5 rounded-2xs bg-[#B82B2B]/30 text-[#B82B2B] text-[9px]">
               LAYER 02
             </span>
           </div>
@@ -145,7 +145,7 @@ export default function HeroDisassembly({ scrollProgress }) {
             </div>
             <div>
               <span className="text-white/30 block text-[8px]">EXPOSURE</span>
-              <span className="text-[#A33A32]">F/1.8</span>
+              <span className="text-[#B82B2B]">F/1.8</span>
             </div>
             <div>
               <span className="text-white/30 block text-[8px]">ISO</span>
@@ -178,7 +178,7 @@ export default function HeroDisassembly({ scrollProgress }) {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-full border-t-2 border-r-2 border-[#A33A32]"
+              className="absolute inset-0 rounded-full border-t-2 border-r-2 border-[#B82B2B]"
             />
             <Aperture size={36} className="text-white/90" />
             <div className="absolute -bottom-5 font-mono text-[9px] text-white/80 tracking-widest">
@@ -187,10 +187,10 @@ export default function HeroDisassembly({ scrollProgress }) {
           </div>
 
           {/* Registration Crop Marks on Front Element */}
-          <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#A33A32]" />
-          <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#A33A32]" />
-          <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-[#A33A32]" />
-          <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-[#A33A32]" />
+          <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#B82B2B]" />
+          <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#B82B2B]" />
+          <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-[#B82B2B]" />
+          <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-[#B82B2B]" />
         </motion.div>
 
         {/* ============================================================== */}
@@ -203,7 +203,7 @@ export default function HeroDisassembly({ scrollProgress }) {
             opacity: pinOpacity,
             z: 200
           }}
-          className="absolute -top-3 -left-3 font-mono text-[9px] bg-black/80 px-2 py-0.5 border border-white/20 text-[#A33A32] rounded-xs"
+          className="absolute -top-3 -left-3 font-mono text-[9px] bg-black/80 px-2 py-0.5 border border-white/20 text-[#B82B2B] rounded-xs"
         >
           TL // OPTICAL_AXIS_01
         </motion.div>
@@ -239,7 +239,7 @@ export default function HeroDisassembly({ scrollProgress }) {
             opacity: pinOpacity,
             z: 200
           }}
-          className="absolute -bottom-3 -right-3 font-mono text-[9px] bg-black/80 px-2 py-0.5 border border-white/20 text-[#A33A32] rounded-xs"
+          className="absolute -bottom-3 -right-3 font-mono text-[9px] bg-black/80 px-2 py-0.5 border border-white/20 text-[#B82B2B] rounded-xs"
         >
           BR // DISASSEMBLE_ACTIVE
         </motion.div>
@@ -248,7 +248,7 @@ export default function HeroDisassembly({ scrollProgress }) {
       {/* Disassembly Status Label */}
       <div className="absolute -bottom-10 left-0 right-0 flex items-center justify-between text-[10px] font-mono text-white/50 px-2">
         <span className="flex items-center gap-1.5">
-          <Layers size={12} className="text-[#A33A32]" />
+          <Layers size={12} className="text-[#B82B2B]" />
           <span>STAGE 02 // 3D OBJECT DISASSEMBLY</span>
         </span>
         <span className="text-white/40">SCROLL TO DISASSEMBLE / REASSEMBLE</span>

@@ -14,16 +14,16 @@ export default function Robotics() {
     <section
       id="robotics"
       ref={sectionRef}
-      className="relative w-full py-28 sm:py-36 bg-[#171717] text-[#F2F0E9] overflow-hidden"
+      className="relative w-full py-28 sm:py-36 bg-[#09221A] text-[#F1F6F2] overflow-hidden"
     >
       {/* Background Architectural Grid Lines */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#F2F0E9_1px,transparent_1px)] [background-size:32px_32px]" />
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#F1F6F2_1px,transparent_1px)] [background-size:32px_32px]" />
 
       <div className="editorial-container relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8 mb-16">
           <div>
-            <div className="editorial-kicker text-[#A33A32] mb-3">
+            <div className="editorial-kicker text-[#B82B2B] mb-3">
               03 // AUTONOMOUS ROBOTICS
             </div>
             <h2 className="font-sans font-black tracking-tight uppercase text-[clamp(2.25rem,5.5vw,5rem)] leading-[0.92] text-white">
@@ -36,13 +36,13 @@ export default function Robotics() {
               Engineering physical intelligence. Integrating ROS 2, computer vision, and behavior tree autonomy into service robotics.
             </p>
             {/* View Mode Toggle */}
-            <div className="inline-flex p-1 bg-[#202020] border border-white/15 rounded-xs font-mono text-xs">
+            <div className="inline-flex p-1 bg-[#0D3D30] border border-white/15 rounded-xs font-mono text-xs">
               <button
                 type="button"
                 onClick={() => setViewMode("exploded")}
                 className={`px-3 py-1 rounded-2xs transition-colors flex items-center gap-1.5 ${
                   viewMode === "exploded"
-                    ? "bg-[#A33A32] text-white font-bold"
+                    ? "bg-[#B82B2B] text-white font-bold"
                     : "text-white/60 hover:text-white"
                 }`}
               >
@@ -54,7 +54,7 @@ export default function Robotics() {
                 onClick={() => setViewMode("image")}
                 className={`px-3 py-1 rounded-2xs transition-colors flex items-center gap-1.5 ${
                   viewMode === "image"
-                    ? "bg-[#A33A32] text-white font-bold"
+                    ? "bg-[#B82B2B] text-white font-bold"
                     : "text-white/60 hover:text-white"
                 }`}
               >
@@ -77,14 +77,14 @@ export default function Robotics() {
             {viewMode === "exploded" ? (
               <RoboticsExplodedView scrollExplode={isInView ? 0.5 : 0} />
             ) : (
-              <div className="flex flex-col justify-between p-3 bg-[#202020] border border-white/15 rounded-xs relative group shadow-2xl h-full">
+              <div className="flex flex-col justify-between p-3 bg-[#0D3D30] border border-white/15 rounded-xs relative group shadow-2xl h-full">
                 {/* Top HUD Telemetry */}
-                <div className="flex items-center justify-between px-3 py-2 bg-[#121212]/90 border-b border-white/10 text-[11px] font-mono text-white/70 mb-3 rounded-xs">
+                <div className="flex items-center justify-between px-3 py-2 bg-[#06241B]/90 border-b border-white/10 text-[11px] font-mono text-white/70 mb-3 rounded-xs">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#A33A32] animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#B82B2B] animate-pulse" />
                     <span className="text-white font-semibold">ROS 2 NODE: /guide_robot_core</span>
                   </div>
-                  <span className="text-[#A33A32]">ILLUSTRATIVE HARDWARE PLATFORM</span>
+                  <span className="text-[#B82B2B]">ILLUSTRATIVE HARDWARE PLATFORM</span>
                 </div>
 
                 {/* Image Container */}
@@ -102,7 +102,7 @@ export default function Robotics() {
                   {/* Bottom Sensor Overlay */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-xs text-white/80 bg-black/60 backdrop-blur-xs p-3 rounded-xs border border-white/10">
                     <div className="flex items-center gap-2">
-                      <Navigation size={15} className="text-[#A33A32]" />
+                      <Navigation size={15} className="text-[#B82B2B]" />
                       <span>Nav2 Pathfinding: Converged</span>
                     </div>
                     <div className="hidden sm:block text-[11px] text-white/60">
@@ -114,7 +114,7 @@ export default function Robotics() {
                 {/* Bottom Specs Bar */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-3 border-t border-white/10 font-mono text-[11px]">
                   {ROBOTICS_PROJECT.specs.map((spec, i) => (
-                    <div key={i} className="p-2 bg-[#181818] rounded-xs border border-white/5">
+                    <div key={i} className="p-2 bg-[#082B20] rounded-xs border border-white/5">
                       <div className="text-white/40 uppercase">{spec.label}</div>
                       <div className="text-white/90 font-medium truncate">{spec.val}</div>
                     </div>
@@ -132,7 +132,7 @@ export default function Robotics() {
             className="lg:col-span-5 flex flex-col justify-between gap-6"
           >
             <div>
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-xs bg-[#A33A32]/20 border border-[#A33A32]/40 text-[#A33A32] font-mono text-xs mb-4">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-xs bg-[#B82B2B]/20 border border-[#B82B2B]/40 text-[#B82B2B] font-mono text-xs mb-4">
                 <Bot size={14} />
                 <span>PRIMARY ROBOTICS PLATFORM</span>
               </div>
@@ -151,12 +151,12 @@ export default function Robotics() {
             </div>
 
             {/* Interactive Tab Switcher */}
-            <div className="bg-[#1F1F1F] p-1 rounded-xs border border-white/10 flex gap-1 font-mono text-xs">
+            <div className="bg-[#0C3A2D] p-1 rounded-xs border border-white/10 flex gap-1 font-mono text-xs">
               <button
                 onClick={() => setActiveTab("objectives")}
                 className={`flex-1 py-2 text-center rounded-xs transition-colors ${
                   activeTab === "objectives"
-                    ? "bg-[#A33A32] text-white font-semibold"
+                    ? "bg-[#B82B2B] text-white font-semibold"
                     : "text-white/60 hover:text-white"
                 }`}
               >
@@ -166,7 +166,7 @@ export default function Robotics() {
                 onClick={() => setActiveTab("stack")}
                 className={`flex-1 py-2 text-center rounded-xs transition-colors ${
                   activeTab === "stack"
-                    ? "bg-[#A33A32] text-white font-semibold"
+                    ? "bg-[#B82B2B] text-white font-semibold"
                     : "text-white/60 hover:text-white"
                 }`}
               >
@@ -180,10 +180,10 @@ export default function Robotics() {
                 {ROBOTICS_PROJECT.objectives.map((obj) => (
                   <div
                     key={obj.step}
-                    className="p-3.5 bg-[#202020] border border-white/10 rounded-xs hover:border-[#A33A32]/50 transition-colors"
+                    className="p-3.5 bg-[#0D3D30] border border-white/10 rounded-xs hover:border-[#B82B2B]/50 transition-colors"
                   >
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-mono text-xs text-[#A33A32] font-semibold">
+                      <span className="font-mono text-xs text-[#B82B2B] font-semibold">
                         {obj.step}
                       </span>
                       <h4 className="font-sans font-semibold text-sm text-white">
@@ -204,9 +204,9 @@ export default function Robotics() {
                 {ROBOTICS_PROJECT.techStack.map((tech, i) => (
                   <div
                     key={i}
-                    className="p-3 bg-[#202020] border border-white/10 rounded-xs"
+                    className="p-3 bg-[#0D3D30] border border-white/10 rounded-xs"
                   >
-                    <div className="font-sans font-bold text-sm text-[#A33A32] mb-1">
+                    <div className="font-sans font-bold text-sm text-[#B82B2B] mb-1">
                       {tech.name}
                     </div>
                     <div className="font-mono text-[11px] text-white/60">

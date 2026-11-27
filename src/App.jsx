@@ -53,7 +53,7 @@ export default function App() {
   }, { scope: mainRef });
 
   return (
-    <div ref={mainRef} className="relative min-h-screen bg-[#F2F0E9] text-[#171717] selection:bg-[#A33A32] selection:text-[#F2F0E9]">
+    <div ref={mainRef} className="relative min-h-screen bg-[#F1F6F2] text-[#09221A] selection:bg-[#B82B2B] selection:text-[#F1F6F2]">
       {/* Film Grain Subtle Overlay */}
       <div className="grain-overlay" aria-hidden="true" />
 

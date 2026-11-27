@@ -1,28 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #F2F0E9;
-  --bg-surface: #E8E5DD;
-  --bg-surface-subtle: #FAF9F6;
-  --bg-dark: #121212;
-  --bg-dark-surface: #181818;
-  --bg-dark-card: #202020;
+  --bg-primary: #F1F6F2;
+  --bg-surface: #E3EDE6;
+  --bg-surface-subtle: #F8FBF8;
+  --bg-dark: #06241B;
+  --bg-dark-surface: #0A3327;
+  --bg-dark-card: #0F4233;
   
-  --text-primary: #171717;
-  --text-secondary: #5E5B55;
-  --text-muted: #8E8B83;
-  --text-light: #F2F0E9;
-  --text-light-muted: #A8A59E;
+  --text-primary: #09221A;
+  --text-secondary: #355447;
+  --text-muted: #648073;
+  --text-light: #F1F6F2;
+  --text-light-muted: #9EB8AC;
   
-  --accent-red: #A33A32;
-  --accent-red-hover: #BF453B;
-  --accent-red-subtle: rgba(163, 58, 50, 0.08);
-  --accent-red-glow: rgba(163, 58, 50, 0.25);
+  --accent-red: #B82B2B;
+  --accent-red-hover: #D13838;
+  --accent-red-subtle: rgba(184, 43, 43, 0.08);
+  --accent-red-glow: rgba(184, 43, 43, 0.25);
+  --accent-emerald: #10B981;
+  --accent-gold: #D4AF37;
   
-  --border-light: rgba(23, 23, 23, 0.12);
-  --border-strong: rgba(23, 23, 23, 0.24);
-  --border-dark: rgba(242, 240, 233, 0.12);
-  --border-dark-strong: rgba(242, 240, 233, 0.25);
+  --border-light: rgba(9, 34, 26, 0.12);
+  --border-strong: rgba(9, 34, 26, 0.24);
+  --border-dark: rgba(212, 175, 55, 0.18);
+  --border-dark-strong: rgba(212, 175, 55, 0.35);
 
   --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -108,7 +110,7 @@ body {
   left: 0;
   width: 40px;
   height: 40px;
-  border: 1.5px solid rgba(163, 58, 50, 0.45);
+  border: 1.5px solid rgba(212, 175, 55, 0.55);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
@@ -123,7 +125,7 @@ body {
   width: 68px;
   height: 68px;
   border-color: var(--accent-red);
-  background-color: rgba(163, 58, 50, 0.08);
+  background-color: rgba(184, 43, 43, 0.08);
 }
 
 @media (pointer: coarse), (max-width: 768px) {

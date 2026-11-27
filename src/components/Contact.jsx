@@ -73,12 +73,12 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative w-full py-28 sm:py-36 bg-[#171717] text-[#F2F0E9] overflow-hidden"
+      className="relative w-full py-28 sm:py-36 bg-[#09221A] text-[#F1F6F2] overflow-hidden"
     >
       <div className="editorial-container">
         {/* Section Kicker */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-16">
-          <div className="editorial-kicker text-[#A33A32]">
+          <div className="editorial-kicker text-[#B82B2B]">
             05 // CONTACT
           </div>
           <div className="font-mono text-xs text-white/50 uppercase tracking-wider">
@@ -94,7 +94,7 @@ export default function Contact() {
             </h2>
           </div>
           <div className="overflow-hidden mt-1">
-            <h2 className="kinetic-line font-serif italic font-normal text-[clamp(2.75rem,8vw,7.5rem)] leading-[0.9] text-[#A33A32]">
+            <h2 className="kinetic-line font-serif italic font-normal text-[clamp(2.75rem,8vw,7.5rem)] leading-[0.9] text-[#B82B2B]">
               LET'S CREATE IT.
             </h2>
           </div>
@@ -110,9 +110,9 @@ export default function Contact() {
               </p>
 
               {/* Email Direct Action Box */}
-              <div className="p-6 bg-[#202020] border border-white/10 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
+              <div className="p-6 bg-[#0D3D30] border border-white/10 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xs bg-[#A33A32]/20 text-[#A33A32]">
+                  <div className="p-2.5 rounded-xs bg-[#B82B2B]/20 text-[#B82B2B]">
                     <Mail size={20} />
                   </div>
                   <div>
@@ -121,7 +121,7 @@ export default function Contact() {
                     </div>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
-                      className="font-mono text-sm sm:text-base font-medium text-white hover:text-[#A33A32] transition-colors"
+                      className="font-mono text-sm sm:text-base font-medium text-white hover:text-[#B82B2B] transition-colors"
                     >
                       {PERSONAL_INFO.email}
                     </a>
@@ -161,13 +161,13 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor-hover="true"
-                  className="flex items-center justify-between p-3.5 bg-[#202020] border border-white/10 hover:border-[#A33A32] rounded-xs text-white transition-colors group"
+                  className="flex items-center justify-between p-3.5 bg-[#0D3D30] border border-white/10 hover:border-[#B82B2B] rounded-xs text-white transition-colors group"
                 >
                   <span className="flex items-center gap-2">
                     <GithubIcon size={16} />
                     GitHub
                   </span>
-                  <ArrowUpRight size={14} className="text-white/40 group-hover:text-[#A33A32] transition-colors" />
+                  <ArrowUpRight size={14} className="text-white/40 group-hover:text-[#B82B2B] transition-colors" />
                 </a>
 
                 <a
@@ -175,13 +175,13 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor-hover="true"
-                  className="flex items-center justify-between p-3.5 bg-[#202020] border border-white/10 hover:border-[#A33A32] rounded-xs text-white transition-colors group"
+                  className="flex items-center justify-between p-3.5 bg-[#0D3D30] border border-white/10 hover:border-[#B82B2B] rounded-xs text-white transition-colors group"
                 >
                   <span className="flex items-center gap-2">
                     <LinkedinIcon size={16} />
                     LinkedIn
                   </span>
-                  <ArrowUpRight size={14} className="text-white/40 group-hover:text-[#A33A32] transition-colors" />
+                  <ArrowUpRight size={14} className="text-white/40 group-hover:text-[#B82B2B] transition-colors" />
                 </a>
 
                 <a
@@ -189,20 +189,20 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor-hover="true"
-                  className="flex items-center justify-between p-3.5 bg-[#202020] border border-white/10 hover:border-[#A33A32] rounded-xs text-white transition-colors group"
+                  className="flex items-center justify-between p-3.5 bg-[#0D3D30] border border-white/10 hover:border-[#B82B2B] rounded-xs text-white transition-colors group"
                 >
                   <span className="flex items-center gap-2">
                     <InstagramIcon size={16} />
                     Instagram
                   </span>
-                  <ArrowUpRight size={14} className="text-white/40 group-hover:text-[#A33A32] transition-colors" />
+                  <ArrowUpRight size={14} className="text-white/40 group-hover:text-[#B82B2B] transition-colors" />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Right Column: Direct Message Box */}
-          <div className="lg:col-span-6 bg-[#202020] p-6 sm:p-8 rounded-xs border border-white/10 shadow-2xl">
+          <div className="lg:col-span-6 bg-[#0D3D30] p-6 sm:p-8 rounded-xs border border-white/10 shadow-2xl">
             <h3 className="font-sans font-bold text-xl text-white mb-2">
               Send a Transmission
             </h3>
@@ -211,8 +211,8 @@ export default function Contact() {
             </p>
 
             {formSubmitted ? (
-              <div className="p-6 bg-white/5 border border-[#A33A32]/40 rounded-xs text-center font-mono">
-                <Check size={28} className="text-[#A33A32] mx-auto mb-2" />
+              <div className="p-6 bg-white/5 border border-[#B82B2B]/40 rounded-xs text-center font-mono">
+                <Check size={28} className="text-[#B82B2B] mx-auto mb-2" />
                 <h4 className="font-sans font-bold text-base text-white mb-1">Draft Ready</h4>
                 <p className="text-xs text-white/70">
                   Your email client has been prepared. You can also reach me directly at {PERSONAL_INFO.email}.
@@ -231,7 +231,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Alex Morgan"
-                    className="w-full px-4 py-3 bg-[#181818] border border-white/15 focus:border-[#A33A32] rounded-xs text-white placeholder-white/20 outline-hidden transition-colors"
+                    className="w-full px-4 py-3 bg-[#082B20] border border-white/15 focus:border-[#B82B2B] rounded-xs text-white placeholder-white/20 outline-hidden transition-colors"
                   />
                 </div>
 
@@ -246,7 +246,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="alex@domain.com"
-                    className="w-full px-4 py-3 bg-[#181818] border border-white/15 focus:border-[#A33A32] rounded-xs text-white placeholder-white/20 outline-hidden transition-colors"
+                    className="w-full px-4 py-3 bg-[#082B20] border border-white/15 focus:border-[#B82B2B] rounded-xs text-white placeholder-white/20 outline-hidden transition-colors"
                   />
                 </div>
 
@@ -261,14 +261,14 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell me about the concept, scope, and timeline..."
-                    className="w-full px-4 py-3 bg-[#181818] border border-white/15 focus:border-[#A33A32] rounded-xs text-white placeholder-white/20 outline-hidden transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-[#082B20] border border-white/15 focus:border-[#B82B2B] rounded-xs text-white placeholder-white/20 outline-hidden transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   data-cursor-hover="true"
-                  className="mt-2 w-full py-3.5 bg-[#A33A32] hover:bg-[#BF453B] text-white font-semibold uppercase tracking-widest flex items-center justify-center gap-2 rounded-xs transition-colors"
+                  className="mt-2 w-full py-3.5 bg-[#B82B2B] hover:bg-[#D13838] text-white font-semibold uppercase tracking-widest flex items-center justify-center gap-2 rounded-xs transition-colors"
                 >
                   <span>Dispatch Message</span>
                   <Send size={15} />
@@ -287,7 +287,7 @@ export default function Contact() {
             className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-white/60 hover:text-white transition-colors"
           >
             <span>Back to Top</span>
-            <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#A33A32] transition-colors">
+            <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#B82B2B] transition-colors">
               <ArrowUp size={14} />
             </div>
           </button>

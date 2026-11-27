@@ -54,26 +54,26 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
         {/* ========================================================= */}
         <div
           style={{ transform: "translateZ(-60px)" }}
-          className="absolute inset-x-4 top-4 bottom-4 rounded-xs border border-white/10 bg-gradient-to-b from-white/5 via-transparent to-black/40 pointer-events-none p-4 flex flex-col justify-between"
+          className="absolute inset-x-4 top-4 bottom-4 rounded-xs border border-[#D4AF37]/25 bg-gradient-to-b from-[#10B981]/10 via-transparent to-[#041A13]/60 pointer-events-none p-4 flex flex-col justify-between"
         >
           {/* Top Camera Metadata */}
           <div className="flex items-center justify-between font-mono text-[10px] text-white/50">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#A33A32] animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-[#B82B2B] animate-ping" />
               <span className="text-white font-semibold">CAM A // LIVE VIEW</span>
             </div>
-            <span className="text-white/40">ANAMORPHIC 2.39:1</span>
+            <span className="text-[#D4AF37]/80">ANAMORPHIC 2.39:1</span>
           </div>
 
           {/* Center Reticle */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none">
-            <Crosshair size={110} className="text-[#A33A32]" />
+          <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+            <Crosshair size={110} className="text-[#D4AF37]" />
           </div>
 
           {/* Bottom Viewfinder Indices */}
-          <div className="flex items-center justify-between font-mono text-[9px] text-white/40 border-t border-white/10 pt-2">
+          <div className="flex items-center justify-between font-mono text-[9px] text-white/40 border-t border-[#D4AF37]/20 pt-2">
             <span>SHUTTER: 180°</span>
-            <span className="text-[#A33A32]">FOCAL LENGTH: 35mm T1.5</span>
+            <span className="text-[#10B981]">FOCAL LENGTH: 35mm T1.5</span>
             <span>ISO 800</span>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
         {/* ========================================================= */}
         {/* AMBIENT LIGHTING / SOFT RIM GLOW BACKDROP                 */}
         {/* ========================================================= */}
-        <div className="absolute bottom-6 w-3/4 h-3/4 rounded-full bg-[radial-gradient(circle,rgba(163,58,50,0.18)_0%,transparent_70%)] blur-2xl pointer-events-none" />
+        <div className="absolute bottom-6 w-3/4 h-3/4 rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.22)_0%,rgba(212,175,55,0.1)_45%,transparent_70%)] blur-2xl pointer-events-none" />
 
         {/* ========================================================= */}
         {/* HERO CUTOUT: SRIMAN HOLDING PROFESSIONAL CAMERA           */}
@@ -128,9 +128,9 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.75, duration: 0.8 }}
-          className="absolute left-2 bottom-12 z-20 font-mono text-[10px] bg-black/80 backdrop-blur-md px-3 py-2 border border-white/15 text-white/90 rounded-xs shadow-xl hidden sm:flex flex-col gap-1"
+          className="absolute left-2 bottom-12 z-20 font-mono text-[10px] bg-[#06241B]/90 backdrop-blur-md px-3 py-2 border border-[#D4AF37]/35 text-white/90 rounded-xs shadow-xl hidden sm:flex flex-col gap-1"
         >
-          <div className="flex items-center gap-1.5 text-[#A33A32] font-semibold text-[9px] uppercase tracking-wider">
+          <div className="flex items-center gap-1.5 text-[#D4AF37] font-semibold text-[9px] uppercase tracking-wider">
             <Camera size={11} />
             <span>OPERATOR // SRIMAN B.</span>
           </div>
@@ -144,9 +144,9 @@ export default function CinematographerHeroCutout({ scrollProgress }) {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.85, duration: 0.8 }}
-          className="absolute right-2 top-16 z-20 font-mono text-[10px] bg-black/80 backdrop-blur-md px-3 py-1.5 border border-white/15 text-white/80 rounded-xs shadow-xl hidden md:flex items-center gap-2"
+          className="absolute right-2 top-16 z-20 font-mono text-[10px] bg-[#06241B]/90 backdrop-blur-md px-3 py-1.5 border border-[#10B981]/35 text-white/85 rounded-xs shadow-xl hidden md:flex items-center gap-2"
         >
-          <Aperture size={12} className="text-[#A33A32]" />
+          <Aperture size={12} className="text-[#10B981]" />
           <span>REAL-TIME FRAMING ACTIVE</span>
         </motion.div>
       </motion.div>
